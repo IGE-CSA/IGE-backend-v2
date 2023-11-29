@@ -4,7 +4,7 @@ services:
     image: java_springv1
     build: .
     ports:
-      - "8062:8062"
+      - "8001:8001"
     volumes:
       - ./volume:/volumes
     restart: unless-stopped
