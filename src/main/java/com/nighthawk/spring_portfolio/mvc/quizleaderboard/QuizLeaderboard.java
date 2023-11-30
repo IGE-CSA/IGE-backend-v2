@@ -15,29 +15,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity // Annotation to simplify creating an entity, which is a lightweight persistence domain object. Typically, an entity represents a table in a relational database, and each entity instance corresponds to a row in that table.
-
 public class QuizLeaderboard {
-
-    /*
-     * @Id annotation designates the primary key field of the entity.
-     * @GeneratedValue annotation configures the way of incrementing the associated database column's value.
-     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    // Fields representing properties of the QuizLeaderboard entity.
-    // private @Column(unique=true) String userName; // (Optional) Uncomment if you want to enforce uniqueness on the userName column.
-    private String userName;
-    private int totalScore;
+    // @Column(unique=true)
+    private String leaders;
 
-    /*
-     * A static method to initialize the QuizLeaderboard with starting scores.
-     * Uses a HashMap to store the association between user names and their initial scores.
-     */
+    private int score;
+
+    // starting scores
+
     public static HashMap<String, Integer> init() {
-        HashMap<String, Integer> quizLeaders = new HashMap<>();
-        return quizLeaders;
+        HashMap<String, Integer> quizleaders = new HashMap<>();
+        return quizleaders;
     }
 }
-
